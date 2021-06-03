@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
     before_action :authenticate_user!
   def index
-    @event = Event.all
+    @events = Event.all
   end
 
   def new
@@ -9,7 +9,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = current_user.created_events.build(params)
+    @event = current_user.created_events.build(event_params)
     if @event.save
         @event.creator = current_user
         redirect_to root_path
@@ -22,7 +22,7 @@ class EventsController < ApplicationController
   end
 
   private
-  def params
+  def event_params
     params.require(:event).permit(:title, :description, :date, :event_id, :user_id)
   end
 end
