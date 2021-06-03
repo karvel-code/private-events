@@ -1,6 +1,11 @@
-
+<div>
 <p><%= @event.title%> </p>
 <p><%= @event.description%> </p>
 <p><%= @event.date%> </p>
 <p><%= @event.creator.email%> </p>
-
+<%= attend_event(@event) %>
+<p> Attendees: </p>
+<% @event.attendees.each do |attendee| %>
+    <%= attendee.email %> <br> <br/>
+<% end %>
+</div>
