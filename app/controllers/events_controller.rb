@@ -22,6 +22,18 @@ class EventsController < ApplicationController
     @event = Event.find_by(id: params[:id])
   end
 
+  def attend
+    @event = Event.find_by(id: params[:id])
+    if current_user.id == @event.creator.id
+      redirect_to root_path
+      flash[:notice] = 'You are already attending this event'
+    else
+      Invitation.create!(event_id: @event.id, user_id: current_user.id)
+      redirect_to root_path
+      flash[:notice] = 'You are now attending this event'
+    end
+  end
+
   private
   def event_params
     params.require(:event).permit(:title, :description, :date, :event_id, :user_id)
