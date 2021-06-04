@@ -26,12 +26,9 @@ class EventsController < ApplicationController
 
   def attend
     @event = Event.find_by(id: params[:id])
-    if current_user.id == @event.creator.id
-      redirect_to root_path
-    else
-      Invitation.create!(event_id: @event.id, user_id: current_user.id)
-      redirect_to root_path
-    end
+    redirect_to root_path if current_user.id == @event.creator.id
+  
+    redirect_to root_path if Invitation.create!(event_id: @event.id, user_id: current_user.id)  
   end
 
   # def destroy

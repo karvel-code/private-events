@@ -60,7 +60,4 @@ Style/HashTransformValues:
   Enabled: false
 Layout/EndOfLine:
    Enabled: False
-Style/FrozenStringLiteralComment:
-  Enabled: false
-Style/IdenticalConditionalBranches:
-  Enabled: false
+   
