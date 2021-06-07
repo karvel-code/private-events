@@ -22,13 +22,15 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find_by(id: params[:id])
+    @upcoming_events = Event.upcoming_events
   end
 
   def attend
     @event = Event.find_by(id: params[:id])
-    redirect_to root_path if current_user.id == @event.creator.id
-
-    redirect_to root_path if Invitation.create!(event_id: @event.id, user_id: current_user.id)
+    if !current_user.id == @event.creator.id
+      Invitation.create!(event_id: @event.id, user_id: current_user.id)
+    end
+    redirect_to root_path
   end
 
   # def destroy

@@ -27,7 +27,7 @@ $ cd <folder>
 ```
 
 ```
-$ git clone git@github.com:verissimohenry/Private-Events.git 
+$ git clone https://github.com/karvel-code/private-events.git 
 ```
 
 ```

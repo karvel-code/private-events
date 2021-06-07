@@ -3,7 +3,10 @@
 <p><%= @event.description%> </p>
 <p><%= @event.date%> </p>
 <p><%= @event.creator.email%> </p>
+
+<%= if @upcoming_events.include? %>
 <%= attend_event(@event) %>
+<% end %>
 <p> Attendees: </p>
 <% @event.attendees.each do |attendee| %>
     <%= attendee.email %> <br> <br/>
