@@ -15,7 +15,7 @@ In this private_event project we created a simple website where user must first 
 
 - Ruby on Rails
 - Active Record
-- Bootstrap 4
+- Bootstrap
 - Ruby
 
 ## Getting Started
@@ -43,6 +43,9 @@ $ rails webpacker:install
 ```
 $ rails db:migrate
 ```
+> Install Rspec gems
+
+```
 $ bundle install
 ```
 
@@ -69,12 +72,18 @@ $ http://localhost:3000/events/new
 - Event show page by clicking on the show button on your event card.
 - Choose friend's name from the select options and click invite.
 
+## Rspec testing
+ > To test all models and scopes, write the following in your terminal:
+ ```
+$ rspec
+```
 ## Authors
 
-👤 **Verissimo Henry**
+👤 **Elvis Kariithi Githinji**
 
-- Github: [@karvel-code](https://github.com/karvel-code)
-- Linkedin: [linkedin](https://www.linkedin.com/in/elvisgithinji/)
+- Github: [@githubhandle](https://github.com/karvel-code)
+- Linkedin: [linkedin](https://www.linkedin.com/in/elvis-githinji/)
+
 ## Contributing
 
 Contributions, issues, and feature requests are welcome!
