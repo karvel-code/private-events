@@ -8,4 +8,8 @@ class Event < ApplicationRecord
 
   scope :past_events, -> { where('date < ?', Date.current) }
   scope :upcoming_events, -> { where('date >= ?', Date.current) }
+
+  def past
+    date < Date.current
+  end
 end

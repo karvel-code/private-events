@@ -27,7 +27,7 @@ class EventsController < ApplicationController
 
   def attend
     @event = Event.find_by(id: params[:id])
-    Invitation.create!(event_id: @event.id, user_id: current_user.id) if !current_user.id == @event.creator.id
+    Invitation.create!(event_id: @event.id, user_id: current_user.id)
     redirect_to root_path
   end
 
